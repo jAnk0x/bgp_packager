@@ -3,7 +3,7 @@ Packager for c-morris/BGPExtrapolator. Please see the README at that repository 
 The scripts in this repository will download from c-morris/BGPExtrapolator four different versions of the project from BGPExtrapolator.
 
 # Use
-To use the packager, download the Bash and Python scripts and place them in the directory you want the packages to go in. You must also have python3 and jq installed on your shell.
+To use the packager, download the Bash and Python scripts and place them in the directory you want the packages to go in. You must also have python3, curl, and jq installed on your shell.
 Then, in the directory, do the following:
 
   ```
@@ -17,6 +17,23 @@ This will then download and package 4 versions of c-morris/BGPExtrapolator:
 
 It will  mkdir for each version and package using debuild within the version's respective folder.
 
+# Installation
+To install the packages after packaging, navigate to the desired package's folder, and do:
+```
+sudo dpkg -i bgp-extrapolator-<type>_<version>_amd64.deb
+```
+or
+```
+sudo dpkg -i rov-<type>_<version>_amd64.deb
+```
+for rov packages.
+After installing all four packages, they can be called from the command line with:
+```
+bgp-extrapolator-stable
+bgp-extrapolator-unstable
+rov-stable
+rov-unstable
+```
+
 # Caveats
 The script makes several requests to the Github REST API. If the standard rate limit of 60 unauthenticated requests are nearly reached or have been reached before using the script, the script may fail to work. Please wait an hour before trying again so that the limit resets.
-As of 19 May 2020, Lintan will return several warnings and/or errors. 
