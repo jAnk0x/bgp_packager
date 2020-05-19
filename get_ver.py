@@ -3,7 +3,7 @@ import json
 import sys
 def get_most_recent_version_forecast():
     '''Gets most recent release for the BGPextrap'''
-    req = requests.get('https://api.github.com/repos/nickup9/BGPExtrapolator/tags')
+    req = requests.get('https://api.github.com/repos/c-morris/BGPExtrapolator/tags')
     req_json = req.json()
     tags = {}
     for i in req_json:
@@ -21,7 +21,7 @@ def get_most_recent_version_forecast():
 
 def get_most_recent_version_rov():
     '''Gets the most recent release of rov++'''
-    req = requests.get('https://api.github.com/repos/nickup9/BGPExtrapolator/tags')
+    req = requests.get('https://api.github.com/repos/c-morris/BGPExtrapolator/tags')
     req_json = req.json()
     tags = {}
     for i in req_json:

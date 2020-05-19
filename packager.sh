@@ -44,7 +44,7 @@ echo "rov Release: " $rov_rel_sha
 echo "From: " $rov_rel_ver
 
 # Getting rov nightly commit urls
-url_branch='https://api.github.com/repos/nickup9/BGPExtrapolator/branches/rovpp2'
+url_branch='https://api.github.com/repos/c-morris/BGPExtrapolator/branches/rovpp2'
 rov_night_sha=$(curl -s $url_branch | jq -r '.commit.sha')
 rov_night_cut=$(echo $rov_night_sha | cut -c1-7)
 echo "rov Nightly: " $rov_night_cut
@@ -67,7 +67,7 @@ rm $output_tar
 deb=$(pwd)/debian
 
 # Now to download sources and build. We will start with bgp-extrap-release first
-dwnload_url=('https://codeload.github.com/nickup9/BGPExtrapolator/tar.gz/'$fore_rel_sha)
+dwnload_url=('https://codeload.github.com/c-morris/BGPExtrapolator/tar.gz/'$fore_rel_sha)
 # Get the version
 ver="$(python3 get_ver.py convert $fore_rel_ver)"
 type=('stable')
@@ -112,7 +112,7 @@ debuild -us -uc
 cd .. && cd ..
 
 # Now for the forecast nightly
-dwnload_url=('https://codeload.github.com/nickup9/BGPExtrapolator/tar.gz/'$fore_night_cut)
+dwnload_url=('https://codeload.github.com/c-morris/BGPExtrapolator/tar.gz/'$fore_night_cut)
 type=('unstable')
 output_tar=('bgp-extrapolator-'$type'.orig.tar.gz')
 output_dir=('bgp-extrapolator-'$type)
@@ -161,7 +161,7 @@ debuild -us -uc
 cd .. && cd ..
 
 # Next: rov release
-dwnload_url=('https://codeload.github.com/nickup9/BGPExtrapolator/tar.gz/'$rov_rel_sha)
+dwnload_url=('https://codeload.github.com/c-morris/BGPExtrapolator/tar.gz/'$rov_rel_sha)
 ver="$(python3 get_ver.py convert $rov_rel_ver)"
 type=('stable')
 output_tar=('rov-'$type'_'$ver'.orig.tar.gz')
@@ -201,7 +201,7 @@ debuild -us -uc
 cd .. && cd ..
 
 # Now for the rov nightly
-dwnload_url=('https://codeload.github.com/nickup9/BGPExtrapolator/tar.gz/'$rov_night_cut)
+dwnload_url=('https://codeload.github.com/c-morris/BGPExtrapolator/tar.gz/'$rov_night_cut)
 type=('unstable')
 output_tar=('rov-'$type'.orig.tar.gz')
 output_dir=('rov-'$type)
