@@ -8,7 +8,7 @@ Then, in the directory, do the following:
 
   ```
   chmod +x packager.sh
-  ./packager
+  sudo ./packager
   ```
 
 This will then download and package 4 versions of c-morris/BGPExtrapolator:
