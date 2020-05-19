@@ -3,7 +3,7 @@ Packager for c-morris/BGPExtrapolator. Please see the README at that repository 
 The scripts in this repository will download from c-morris/BGPExtrapolator four different versions of the project from BGPExtrapolator.
 
 # Use
-To use the packager, download the Bash and Python scripts and place them in the directory you want the packages to go in. You must also have python3, curl, and jq installed on your shell.
+To use the packager, download the Bash and Python scripts and place them in the directory you want the packages to go in. You must also have python3, curl, and jq installed on your machine.
 Then, in the directory, do the following:
 
   ```
@@ -37,3 +37,11 @@ rov-unstable
 
 # Caveats
 The script makes several requests to the Github REST API. If the standard rate limit of 60 unauthenticated requests are nearly reached or have been reached before using the script, the script may fail to work. Please wait an hour before trying again so that the limit resets.
+
+# Version syntax
+The tag for releases must be in the form:
+```
+bgpe-v#.#.# // For BGPExtrapolator releases
+rov-v#.#.# // For ROV releases
+```
+Deviations from this will break get_ver.py.
