@@ -6,10 +6,10 @@ The scripts in this repository will download from c-morris/BGPExtrapolator four 
 To use the packager, download the Bash and Python scripts and place them in the directory you want the packages to go in. You must also have python3 and jq installed on your shell.
 Then, in the directory, do the following:
 
-  '''
+  ```
   chmod +x packager.sh
   ./packager
-  '''
+  ```
 
 This will then download and package 4 versions of c-morris/BGPExtrapolator:
 - The release and unstable (from branch master) versions of BGPExtrapolator 
