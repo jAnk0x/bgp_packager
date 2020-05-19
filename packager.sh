@@ -1,21 +1,28 @@
 #!/bin/bash
 
-#TODO: PR for makefile
-#      sed makefile before packaging	
-# Making sure that jq and python3 are installed
+# This is the packager for bgp-extrapolator and rov.
+
+# Making sure that jq, python3, and curl are installed
 python3_test=$(command -v python3)
 jq_test=$(command -v jq)
+curl_test=$(command -v curl)
 if [ -z "$python3_test" ]
 then
 	echo "Aborting: python3 not installed"
 	exit 1
 fi
+
 if [ -z "$jq_test" ]
 then
 	echo "Aborting: jq not installed"
 	exit 1
 fi
 
+if [ -z "$curl_test" ]
+then
+	echo "Aborting: curl not installed"
+	exit 1
+fi
 
 
 # Getting forecast release commit shas
@@ -238,3 +245,5 @@ cd $output_dir'_'$ver
 
 # Build it
 debuild -us -uc
+
+# And now we're done.
