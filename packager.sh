@@ -31,13 +31,11 @@ then
 	exit 1
 fi
 
-# dpkg-dev devscripts equivs    libboost-dev libboost-test-dev libboost-program-options-dev libpqxx-dev libboost-filesystem-dev libboost-log-dev libboost-thread-dev libpq-dev debhelper (>= 9)
-
-# # Getting forecast release commit shas
-# fore_rel_sha="$(python3 get_ver.py forecast-sha)"
-# fore_rel_ver="$(python3 get_ver.py forecast-tag)"
-# echo "Forcast Release: " $fore_rel_sha
-# echo "From: "$fore_rel_ver
+# Getting forecast release commit shas
+fore_rel_sha="$(python3 get_ver.py forecast-sha)"
+fore_rel_ver="$(python3 get_ver.py forecast-tag)"
+echo "Forcast Release: " $fore_rel_sha
+echo "From: "$fore_rel_ver
 
 # Getting forecast nightly commit shas
 url_branch='https://api.github.com/repos/c-morris/BGPExtrapolator/branches/master'
